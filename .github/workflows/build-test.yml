@@ -44,10 +44,12 @@ jobs:
       - name: Download model (kitten-tts-nano int8, smallest)
         run: |
           mkdir -p models/kitten-tts-nano-int8
-          for FILE in config.json kitten_tts_nano_v0_8_int8.onnx voices.npz; do
+          for FILE in config.json kitten_tts_nano_v0_8.onnx voices.npz; do
             curl -L -o "models/kitten-tts-nano-int8/$FILE" \
               "https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8/resolve/main/$FILE"
           done
+          echo "Downloaded model files:"
+          ls -lh models/kitten-tts-nano-int8/
 
       - name: Generate test audio (all voices)
         run: |
