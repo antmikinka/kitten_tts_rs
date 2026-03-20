@@ -1,0 +1,37 @@
+[package]
+name = "kitten-tts"
+version = "0.1.0"
+edition = "2021"
+description = "Rust port of KittenTTS — ultra-lightweight ONNX-based text-to-speech"
+license = "Apache-2.0"
+
+[[bin]]
+name = "kitten-tts"
+path = "src/main.rs"
+
+[lib]
+name = "kitten_tts"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+hound = "3.5"
+ndarray = "0.17"
+ort = "2.0.0-rc.12"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+unicode-normalization = "0.1"
+zip = "2"
+
+# Optional GPU acceleration
+# Enable via: cargo build --features cuda
+# or: cargo build --features coreml
+
+[features]
+default = []
+cuda = ["ort/cuda"]
+tensorrt = ["ort/tensorrt"]
+coreml = ["ort/coreml"]
+directml = ["ort/directml"]
