@@ -19,9 +19,6 @@ jobs:
           - target: aarch64-unknown-linux-gnu
             os: ubuntu-latest
             name: kitten-tts-aarch64-linux
-          - target: x86_64-apple-darwin
-            os: macos-15
-            name: kitten-tts-x86_64-macos
           - target: aarch64-apple-darwin
             os: macos-15
             name: kitten-tts-aarch64-macos
