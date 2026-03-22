@@ -1,8 +1,9 @@
 # kitten-tts-rs 🐱🦀
 
-A Rust port of [KittenTTS](https://github.com/KittenML/KittenTTS) — ultra-lightweight ONNX-based text-to-speech.
+Rust implementation of [KittenTTS](https://github.com/KittenML/KittenTTS). KittenTTS delivers high-quality voice synthesis with models ranging from **15M to 80M parameters** (25–80 MB on disk). This Rust implementation provides self-contained binaries with no Python dependency.
 
-KittenTTS delivers high-quality voice synthesis with models ranging from **15M to 80M parameters** (25–80 MB on disk). This Rust port provides a single, self-contained binary with no Python dependency.
+* A Rust CLI program. It is ideally suited for AI agent skills.
+* An OpenAI compatible API server. It supports streaming for realtime audio applications like the [EchoKit](https://echokit.dev/).
 
 > **Adapted from:** [KittenML/KittenTTS](https://github.com/KittenML/KittenTTS) (Apache-2.0). All model weights are from the original project.
 
