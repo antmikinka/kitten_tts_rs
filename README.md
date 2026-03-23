@@ -93,10 +93,10 @@ models/
 
 ```bash
 # Basic usage (outputs output.wav)
-./kitten-tts ./models/kitten-tts-mini "Hello, world!" Bruno
+./kitten-tts ./models/kitten-tts-mini 'Hello, world!' Bruno
 
 # Specify output file and speed
-./kitten-tts ./models/kitten-tts-mini "Hello, world!" --voice Luna --speed 1.2 --output hello.wav
+./kitten-tts ./models/kitten-tts-mini 'Hello, world!' --voice Luna --speed 1.2 --output hello.wav
 
 # List available voices
 ./kitten-tts ./models/kitten-tts-mini "" --list-voices
@@ -253,7 +253,7 @@ done
 Test the CLI:
 
 ```bash
-./target/release/kitten-tts ./models/kitten-tts-nano-int8 "Hello, world!" Bruno
+./target/release/kitten-tts ./models/kitten-tts-nano-int8 'Hello, world!' Bruno
 ```
 
 Test the API server:
@@ -263,7 +263,7 @@ Test the API server:
 # In another terminal:
 curl -X POST http://localhost:8080/v1/audio/speech \
   -H "Content-Type: application/json" \
-  -d '{"input": "Hello from the API!", "voice": "alloy"}' \
+  -d '{"input": "Hello from the API", "voice": "alloy"}' \
   --output test.wav
 ```
 
